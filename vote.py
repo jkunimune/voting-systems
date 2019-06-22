@@ -56,7 +56,8 @@ if __name__ == '__main__':
 	for record, state_border in zip(shpf.records(), shpf.shapes()):
 		state_name = record[0]
 		state_cities = cities[[encloses(state_border, city.x, city.y) for _,city in cities.iterrows()]]
-		if len(state_cities) == 0:	continue
+		state_cities = state_cities[state_cities.Population > POPULATION_CUTOFF]
+		if len(state_cities) <= 1:	continue
 
 		i = np.expand_dims(np.arange(math.floor(y_to_i(state_border.bbox[3])), math.ceil(y_to_i(state_border.bbox[1]))+1), axis=1)
 		j = np.expand_dims(np.arange(math.floor(x_to_j(state_border.bbox[0])), math.ceil(x_to_j(state_border.bbox[2]))+1), axis=0)

@@ -65,6 +65,7 @@ if __name__ == '__main__':
 		valid = [k for k in range(len(state_pop_z)) if encloses(state_border, state_pop_x[k], state_pop_y[k])]
 		state_pop_x, state_pop_y, state_pop_z = state_pop_x[valid], state_pop_y[valid], state_pop_z[valid]
 
-		winner_idx = elect(candidates=state_cities.loc[:,['x','y']].values, voters=np.stack((state_pop_x, state_pop_y, state_pop_z), axis=1))
+		winner_idx = elect(candidates=state_cities.loc[:,['x','y']].values, voters=np.stack((state_pop_x, state_pop_y, state_pop_z), axis=1),
+			system='runoff')
 		winner = state_cities.iloc[winner_idx]
 		print("{} wins {}".format(winner.City, state_name))

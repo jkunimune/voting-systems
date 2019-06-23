@@ -25,7 +25,9 @@ def encloses(geometry, x, y):
 		except IndexError:
 			vertices = geometry.points[geometry.parts[i]:]
 		path = plt_path.Path(vertices)
-		return path.contains_points([[x, y]])
+		if path.contains_points([[x, y]]):
+			return True
+	return False
 
 
 def y_to_i(y):
@@ -33,6 +35,14 @@ def y_to_i(y):
 
 def x_to_j(x):
 	return (x - X_0)/(STEP*REDUCTION)
+
+
+def mercator_forward(x):
+    return np.degrees(np.arcsinh(np.tan(np.radians(x))))
+
+
+def mercator_inverse(x):
+    return np.degrees(np.arctan(np.sinh(np.radians(x))))
 
 
 if __name__ == '__main__':
@@ -56,7 +66,7 @@ if __name__ == '__main__':
 	usefulness = []
 	for idx, (record, state_border) in enumerate(zip(shpf.records(), shpf.shapes())):
 		state_name = record[0]
-		state_cities = cities[[encloses(state_border, city.x, city.y) for _,city in cities.iterrows()]]
+		state_cities = cities[cities.State==state_name]
 		if len(state_cities) <= 2:	continue
 		state_cities = state_cities.nlargest(NUM_CANDIDATES, 'Population')
 
@@ -68,9 +78,20 @@ if __name__ == '__main__':
 
 		candidate_array = state_cities.loc[:,['x','y']].values
 		voter_array = np.stack((state_pop_x, state_pop_y, state_pop_z), axis=1)
+		candidate_array[:,1] = mercator_forward(candidate_array[:,1])
+		voter_array[:,1] = mercator_forward(voter_array[:,1])
 
-		candidate_array[:,1] = np.degrees(np.arcsinh(np.tan(np.radians(candidate_array[:,1]))))
-		voter_array[:,1] = np.degrees(np.arcsinh(np.tan(np.radians(voter_array[:,1]))))
+		# for i in range(len(state_border.parts)):
+		# 	part_start, part_end = state_border.parts[i], (state_border.parts[i+1] if i+1 < len(state_border.parts) else len(state_border.points))
+		# 	border_array = np.array(state_border.points[part_start:part_end])
+		# 	border_array[:,1] = mercator_forward(border_array[:,1])
+		# 	plt.plot(border_array[:,0], border_array[:,1], 'k-', linewidth=1, zorder=0)
+		# plt.scatter(voter_array[:,0], voter_array[:,1], s=voter_array[:,2]/voter_array[:,2].max()*10, c='b', marker='.', zorder=-1)
+		# plt.scatter(candidate_array[:,0], candidate_array[:,1], s=50, c='w', marker='o', zorder=1)
+		# plt.scatter(candidate_array[:,0], candidate_array[:,1], s=50, c='k', marker='.', zorder=2)
+		# # plt.gca().set_yscale('function', functions=(mercator_forward, mercator_inverse)) # not supported with custom axes. Cry.
+		# plt.axis('equal')
+		# plt.show()
 
 		winners = []
 		print("{}: {}".format(idx, state_name))
@@ -84,4 +105,4 @@ if __name__ == '__main__':
 		if sum(usefulness[-1][1:]) <= 0:
 			usefulness.pop()
 
-	print(np.array(usefulness))
+	print(np.array(sorted(usefulness, key=lambda row: sum(row[1:]))))

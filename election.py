@@ -21,7 +21,7 @@ def elect(candidates, voters, system='plurality', verbose=True):
 		return condorcet(candidates, voters, verbose)
 	elif system == 'score':
 		return score(candidates, voters, 10, verbose)
-	elif system == 'aproval':
+	elif system == 'approval':
 		return score(candidates, voters, 1, verbose)
 	else:
 		raise ValueError(system)
@@ -117,7 +117,7 @@ def instant_runoff(candidates, voters, verbose):
 
 
 def condorcet(candidates, voters, verbose):
-	value = np.hypot(
+	value = -np.hypot(
 		np.expand_dims(voters[:,0], 0) - np.expand_dims(candidates[:,0], 1),
 		np.expand_dims(voters[:,1], 0) - np.expand_dims(candidates[:,1], 1))
 	votes = np.array(
@@ -131,6 +131,16 @@ def condorcet(candidates, voters, verbose):
 	if not np.any(np.all(votes>=0, axis=1)):
 		raise RuntimeError("There is no Condorcet winner.")
 	return np.argmax(np.sum(votes>=0, axis=1))
+
+
+def score(candidates, voters, max_score, verbose):
+	value = -np.hypot(
+		np.expand_dims(voters[:,0], 0) - np.expand_dims(candidates[:,0], 1),
+		np.expand_dims(voters[:,1], 0) - np.expand_dims(candidates[:,1], 1))
+	votes = np.around((value - value.min(axis=0))/(value.max(axis=0) - value.min(axis=0))*max_score)
+	if verbose:
+		print("Scores: {}".format(votes.mean(axis=1)))
+	return np.argmax(votes.mean(axis=1))
 
 
 def rankdata(data, axis=None):

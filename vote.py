@@ -4,8 +4,11 @@ import matplotlib.path as plt_path
 import matplotlib.pyplot as plt
 import numpy as np
 import pandas as pd
+import seaborn
 
 from election import elect
+
+seaborn.set_style('white')
 
 
 NUM_CANDIDATES = 5
@@ -15,7 +18,9 @@ N_COLS = 8688
 STEP = 0.04166666666670
 X_0 = -180.97916666666666
 Y_0 = 72.97916666671064
-REDUCTION = 1
+REDUCTION = 6
+
+ELECTORAL_SYSTEMS = ['Plurality','Primary','Runoff','Instant-runoff','Condorcet','Approval','Score']
 
 
 def encloses(geometry, x, y):
@@ -64,6 +69,7 @@ if __name__ == '__main__':
 	cities['y'], cities['x'] = cities['y_str'].astype(float), cities['x_str'].astype(float)
 
 	usefulness = []
+	satisfaction = []
 	for idx, (record, state_border) in enumerate(zip(shpf.records(), shpf.shapes())):
 		state_name = record[0]
 		state_cities = cities[cities.State==state_name]
@@ -81,6 +87,10 @@ if __name__ == '__main__':
 		candidate_array[:,1] = mercator_forward(candidate_array[:,1])
 		voter_array[:,1] = mercator_forward(voter_array[:,1])
 
+		distances = np.average(np.hypot(
+			np.expand_dims(voter_array[:,0], 0) - np.expand_dims(candidate_array[:,0], 1),
+			np.expand_dims(voter_array[:,1], 0) - np.expand_dims(candidate_array[:,1], 1)), weights=voter_array[:,2], axis=1)
+
 		# for i in range(len(state_border.parts)):
 		# 	part_start, part_end = state_border.parts[i], (state_border.parts[i+1] if i+1 < len(state_border.parts) else len(state_border.points))
 		# 	border_array = np.array(state_border.points[part_start:part_end])
@@ -96,13 +106,21 @@ if __name__ == '__main__':
 		winners = []
 		print("{}: {}".format(idx, state_name))
 		print(state_cities.City.values)
-		for system in ['plurality','primary','runoff','instant-runoff','condorcet','score','approval']:
-			winner_idx = elect(candidates=candidate_array, voters=voter_array, system=system, verbose=False)
+		for system in ELECTORAL_SYSTEMS:
+			winner_idx = elect(candidates=candidate_array, voters=voter_array, system=system.lower(), verbose=False)
 			winner = state_cities.iloc[winner_idx]
-			print("  {}: {}".format(system, winner.City))
+			print("  {:14s}: {}".format(system, winner.City))
 			winners.append(winner_idx)
-		usefulness.append([idx, winners[3]!=winners[0], winners[4]!=winners[3], winners[5]!=winners[4], winners[6]!=winners[5]])
+
+		usefulness.append([idx, winners[3]!=winners[0], winners[4]!=winners[3], winners[6]!=winners[4], winners[6]!=winners[5]])
 		if sum(usefulness[-1][1:]) <= 0:
 			usefulness.pop()
+		satisfaction.append(distances[winners]/distances.min())
 
 	print(np.array(sorted(usefulness, key=lambda row: sum(row[1:]))))
+
+	plt.violinplot(np.array(satisfaction))
+	plt.xlabel("Electoral system")
+	plt.xticks(ticks=1+np.arange(len(ELECTORAL_SYSTEMS)), labels=ELECTORAL_SYSTEMS)
+	plt.ylabel("Mean distance to capital (normalised)")
+	plt.show()

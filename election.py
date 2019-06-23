@@ -28,10 +28,10 @@ def elect(candidates, voters, system='plurality', verbose=True):
 
 
 def plurality(candidates, voters, verbose):
-	votes = np.argmax(-np.hypot(
+	votes = np.argmax(1/np.hypot(
 		np.expand_dims(voters[:,0], 0) - np.expand_dims(candidates[:,0], 1),
 		np.expand_dims(voters[:,1], 0) - np.expand_dims(candidates[:,1], 1)), axis=0)
-	tallies = np.histogram(votes, bins=candidates.shape[0], weights=voters[:,2])[0]
+	tallies = np.sum(voters[:,2]*(votes==np.expand_dims(np.arange(candidates.shape[0]), 1)), axis=1)
 	if verbose:
 		print("Tallies: {}".format(tallies/tallies.sum()))
 	return np.argmax(tallies)
@@ -53,13 +53,13 @@ def primary(candidates, voters, verbose):
 		votes = np.argmax(1/np.hypot(
 			np.expand_dims(voters[voter_aff==i,0], 0) - np.expand_dims(candidates[:,0], 1),
 			np.expand_dims(voters[voter_aff==i,1], 0) - np.expand_dims(candidates[:,1], 1))*affiliated, axis=0)
-		primary_tallies[i] = np.histogram(votes, bins=np.arange(candidates.shape[0]+1), weights=voters[voter_aff==i,2])[0]
+		primary_tallies[i] = np.sum(voters[voter_aff==i,2]*(votes==np.expand_dims(np.arange(candidates.shape[0]), 1)), axis=1)
 		qualified[np.argmax(primary_tallies[i])] = 1
 
 	votes = np.argmax(1/np.hypot(
 		np.expand_dims(voters[:,0], 0) - np.expand_dims(candidates[:,0], 1),
 		np.expand_dims(voters[:,1], 0) - np.expand_dims(candidates[:,1], 1))*qualified, axis=0)
-	final_tallies = np.histogram(votes, bins=np.arange(candidates.shape[0]+1), weights=voters[:,2])[0]
+	final_tallies = np.sum(voters[:,2]*(votes==np.expand_dims(np.arange(candidates.shape[0]), 1)), axis=1)
 
 	if verbose:
 		for i, party in [(0, "S"), (1, "N")]:
@@ -70,10 +70,10 @@ def primary(candidates, voters, verbose):
 
 
 def runoff(candidates, voters, verbose):
-	votes = np.argmax(-np.hypot(
+	votes = np.argmax(1/np.hypot(
 		np.expand_dims(voters[:,0], 0) - np.expand_dims(candidates[:,0], 1),
 		np.expand_dims(voters[:,1], 0) - np.expand_dims(candidates[:,1], 1)), axis=0)
-	initial_tallies = np.histogram(votes, bins=np.arange(candidates.shape[0]+1), weights=voters[:,2])[0]
+	initial_tallies = np.sum(voters[:,2]*(votes==np.expand_dims(np.arange(candidates.shape[0]), 1)), axis=1)
 
 	if initial_tallies.max() > initial_tallies.sum()/2:
 		if verbose:
@@ -84,7 +84,7 @@ def runoff(candidates, voters, verbose):
 	votes = np.argmax(1/np.hypot(
 		np.expand_dims(voters[:,0], 0) - np.expand_dims(candidates[:,0], 1),
 		np.expand_dims(voters[:,1], 0) - np.expand_dims(candidates[:,1], 1))*qualified, axis=0)
-	final_tallies = np.histogram(votes, bins=np.arange(candidates.shape[0]+1), weights=voters[:,2])[0]
+	final_tallies = np.sum(voters[:,2]*(votes==np.expand_dims(np.arange(candidates.shape[0]), 1)), axis=1)
 
 	if verbose:
 		print("Initial tallies: {}".format(initial_tallies/initial_tallies.sum()))
@@ -93,4 +93,28 @@ def runoff(candidates, voters, verbose):
 	return np.argmax(final_tallies)
 
 
+def instant_runoff(candidates, voters, verbose):
+	votes = rankdata(np.hypot(
+		np.expand_dims(voters[:,0], 0) - np.expand_dims(candidates[:,0], 1),
+		np.expand_dims(voters[:,1], 0) - np.expand_dims(candidates[:,1], 1)), axis=0)
+	qualified = list(range(candidates.shape[0]))
+	disqualified = []
 
+	while True:
+		tallies = np.sum(voters[:,2]*(votes==0), axis=1)
+		if verbose:
+			print("Tallies: {}".format(tallies/tallies.sum()))
+
+		if tallies.max() > tallies.sum()/2:
+			return tallies.argmax()
+		else:
+			loser = qualified[tallies[qualified].argmin()]
+			qualified.remove(loser)
+			disqualified.append(loser)
+			while np.any(votes[disqualified,:]==0):
+				for loser in disqualified[::-1]: # make sure no one's vote goes to a disqualified candidate, ever.
+					votes[:,votes[loser,:]==0] -= 1
+
+
+def rankdata(data, axis=None):
+	return np.argsort(np.argsort(data, axis=axis), axis=axis) # yeah, it's inefficient, but I'm only using it for, like, 5 things at a time.

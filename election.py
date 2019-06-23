@@ -116,5 +116,22 @@ def instant_runoff(candidates, voters, verbose):
 					votes[:,votes[loser,:]==0] -= 1
 
 
+def condorcet(candidates, voters, verbose):
+	value = np.hypot(
+		np.expand_dims(voters[:,0], 0) - np.expand_dims(candidates[:,0], 1),
+		np.expand_dims(voters[:,1], 0) - np.expand_dims(candidates[:,1], 1))
+	votes = np.array(
+		[
+			[np.sum(value[i,:] > value[j,:]) - np.sum(value[i,:] < value[j,:]) for j in range(candidates.shape[0])]
+		for i in range(candidates.shape[0])
+	]) # votes[i,j] is 1 if i would beat j
+
+	if verbose:
+		print("Preferences:\n{}".format(votes/voters.shape[0]))
+	if not np.any(np.all(votes>=0, axis=1)):
+		raise RuntimeError("There is no Condorcet winner.")
+	return np.argmax(np.sum(votes>=0, axis=1))
+
+
 def rankdata(data, axis=None):
 	return np.argsort(np.argsort(data, axis=axis), axis=axis) # yeah, it's inefficient, but I'm only using it for, like, 5 things at a time.

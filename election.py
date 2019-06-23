@@ -6,9 +6,6 @@ def elect(candidates, voters, system='plurality', verbose=True):
 	""" candidates:	[[x, y]]
 		voters:		[[x, y, weight]
 	"""
-	candidates[:,1] = np.degrees(np.arcsinh(np.tan(np.radians(candidates[:,1]))))
-	voters[:,1] = np.degrees(np.arcsinh(np.tan(np.radians(voters[:,1]))))
-
 	if system == 'plurality':
 		return plurality(candidates, voters, verbose)
 	elif system == 'primary':
@@ -122,7 +119,7 @@ def condorcet(candidates, voters, verbose):
 		np.expand_dims(voters[:,1], 0) - np.expand_dims(candidates[:,1], 1))
 	votes = np.array(
 		[
-			[np.sum(value[i,:] > value[j,:]) - np.sum(value[i,:] < value[j,:]) for j in range(candidates.shape[0])]
+			[np.sum(voters[:,2]*(value[i,:]>value[j,:])) - np.sum(voters[:,2]*(value[i,:]<value[j,:])) for j in range(candidates.shape[0])]
 		for i in range(candidates.shape[0])
 	]) # votes[i,j] is 1 if i would beat j
 
@@ -138,9 +135,10 @@ def score(candidates, voters, max_score, verbose):
 		np.expand_dims(voters[:,0], 0) - np.expand_dims(candidates[:,0], 1),
 		np.expand_dims(voters[:,1], 0) - np.expand_dims(candidates[:,1], 1))
 	votes = np.around((value - value.min(axis=0))/(value.max(axis=0) - value.min(axis=0))*max_score)
+	scores = np.average(votes, axis=1, weights=voters[:,2])
 	if verbose:
-		print("Scores: {}".format(votes.mean(axis=1)))
-	return np.argmax(votes.mean(axis=1))
+		print("Scores: {}".format(scores))
+	return np.argmax(scores)
 
 
 def rankdata(data, axis=None):

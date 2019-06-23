@@ -15,7 +15,7 @@ N_COLS = 8688
 STEP = 0.04166666666670
 X_0 = -180.97916666666666
 Y_0 = 72.97916666671064
-REDUCTION = 2
+REDUCTION = 1
 
 
 def encloses(geometry, x, y):
@@ -53,10 +53,11 @@ if __name__ == '__main__':
 	cities['y_str'], cities['x_str'] = zip(*cities['Coordinates'].str.split(', '))
 	cities['y'], cities['x'] = cities['y_str'].astype(float), cities['x_str'].astype(float)
 
-	for record, state_border in zip(shpf.records(), shpf.shapes()):
+	usefulness = []
+	for idx, (record, state_border) in enumerate(zip(shpf.records(), shpf.shapes())):
 		state_name = record[0]
 		state_cities = cities[[encloses(state_border, city.x, city.y) for _,city in cities.iterrows()]]
-		if len(state_cities) <= 1:	continue
+		if len(state_cities) <= 2:	continue
 		state_cities = state_cities.nlargest(NUM_CANDIDATES, 'Population')
 
 		i = np.expand_dims(np.arange(math.floor(y_to_i(state_border.bbox[3])), math.ceil(y_to_i(state_border.bbox[1]))+1), axis=1)
@@ -65,7 +66,22 @@ if __name__ == '__main__':
 		valid = [k for k in range(len(state_pop_z)) if encloses(state_border, state_pop_x[k], state_pop_y[k])]
 		state_pop_x, state_pop_y, state_pop_z = state_pop_x[valid], state_pop_y[valid], state_pop_z[valid]
 
-		winner_idx = elect(candidates=state_cities.loc[:,['x','y']].values, voters=np.stack((state_pop_x, state_pop_y, state_pop_z), axis=1),
-			system='approval')
-		winner = state_cities.iloc[winner_idx]
-		print("{} wins {}".format(winner.City, state_name))
+		candidate_array = state_cities.loc[:,['x','y']].values
+		voter_array = np.stack((state_pop_x, state_pop_y, state_pop_z), axis=1)
+
+		candidate_array[:,1] = np.degrees(np.arcsinh(np.tan(np.radians(candidate_array[:,1]))))
+		voter_array[:,1] = np.degrees(np.arcsinh(np.tan(np.radians(voter_array[:,1]))))
+
+		winners = []
+		print("{}: {}".format(idx, state_name))
+		print(state_cities.City.values)
+		for system in ['plurality','primary','runoff','instant-runoff','condorcet','score','approval']:
+			winner_idx = elect(candidates=candidate_array, voters=voter_array, system=system, verbose=False)
+			winner = state_cities.iloc[winner_idx]
+			print("  {}: {}".format(system, winner.City))
+			winners.append(winner_idx)
+		usefulness.append([idx, winners[3]!=winners[0], winners[4]!=winners[3], winners[5]!=winners[4], winners[6]!=winners[5]])
+		if sum(usefulness[-1][1:]) <= 0:
+			usefulness.pop()
+
+	print(np.array(usefulness))

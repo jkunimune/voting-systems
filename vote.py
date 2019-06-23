@@ -15,7 +15,7 @@ N_COLS = 8688
 STEP = 0.04166666666670
 X_0 = -180.97916666666666
 Y_0 = 72.97916666671064
-REDUCTION = 1
+REDUCTION = 2
 
 
 def encloses(geometry, x, y):
@@ -66,6 +66,6 @@ if __name__ == '__main__':
 		state_pop_x, state_pop_y, state_pop_z = state_pop_x[valid], state_pop_y[valid], state_pop_z[valid]
 
 		winner_idx = elect(candidates=state_cities.loc[:,['x','y']].values, voters=np.stack((state_pop_x, state_pop_y, state_pop_z), axis=1),
-			system='runoff')
+			system='primary')
 		winner = state_cities.iloc[winner_idx]
 		print("{} wins {}".format(winner.City, state_name))

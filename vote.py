@@ -4,11 +4,12 @@ import matplotlib.path as plt_path
 import matplotlib.pyplot as plt
 import numpy as np
 import pandas as pd
-import seaborn
+import seaborn as sns
 
 from election import elect
 
-seaborn.set_style('white')
+# sns.set_style('white')
+sns.set(style="ticks", color_codes=True)
 
 
 NUM_CANDIDATES = 5
@@ -18,7 +19,7 @@ N_COLS = 8688
 STEP = 0.04166666666670
 X_0 = -180.97916666666666
 Y_0 = 72.97916666671064
-REDUCTION = 6
+REDUCTION = 1
 
 ELECTORAL_SYSTEMS = ['Plurality','Primary','Runoff','Instant-runoff','Condorcet','Approval','Score']
 
@@ -68,13 +69,14 @@ if __name__ == '__main__':
 	cities['y_str'], cities['x_str'] = zip(*cities['Coordinates'].str.split(', '))
 	cities['y'], cities['x'] = cities['y_str'].astype(float), cities['x_str'].astype(float)
 
-	usefulness = []
-	satisfaction = []
+	columns = ['state','system','winner_idx','winner_name','winner_distance'] + ['candidate_{}'.format(i) for i in range(NUM_CANDIDATES)]
+	results = pd.DataFrame(columns=columns)
 	for idx, (record, state_border) in enumerate(zip(shpf.records(), shpf.shapes())):
 		state_name = record[0]
 		state_cities = cities[cities.State==state_name]
 		if len(state_cities) <= 2:	continue
 		state_cities = state_cities.nlargest(NUM_CANDIDATES, 'Population')
+		print(state_name)
 
 		i = np.expand_dims(np.arange(math.floor(y_to_i(state_border.bbox[3])), math.ceil(y_to_i(state_border.bbox[1]))+1), axis=1)
 		j = np.expand_dims(np.arange(math.floor(x_to_j(state_border.bbox[0])), math.ceil(x_to_j(state_border.bbox[2]))+1), axis=0)
@@ -90,6 +92,7 @@ if __name__ == '__main__':
 		distances = np.average(np.hypot(
 			np.expand_dims(voter_array[:,0], 0) - np.expand_dims(candidate_array[:,0], 1),
 			np.expand_dims(voter_array[:,1], 0) - np.expand_dims(candidate_array[:,1], 1)), weights=voter_array[:,2], axis=1)
+		distances /= distances.min()
 
 		# for i in range(len(state_border.parts)):
 		# 	part_start, part_end = state_border.parts[i], (state_border.parts[i+1] if i+1 < len(state_border.parts) else len(state_border.points))
@@ -103,24 +106,25 @@ if __name__ == '__main__':
 		# plt.axis('equal')
 		# plt.show()
 
-		winners = []
-		print("{}: {}".format(idx, state_name))
-		print(state_cities.City.values)
 		for system in ELECTORAL_SYSTEMS:
 			winner_idx = elect(candidates=candidate_array, voters=voter_array, system=system.lower(), verbose=False)
 			winner = state_cities.iloc[winner_idx]
-			print("  {:14s}: {}".format(system, winner.City))
-			winners.append(winner_idx)
+			result = dict(
+				state=state_name, system=system, winner_idx=winner_idx, winner_name=winner.City, winner_distance=distances[winner_idx])
+			for i in range(state_cities.shape[0]):
+				result['candidate_{}'.format(i)] = state_cities.iloc[i].City
+			results = results.append(result, ignore_index=True)
 
-		usefulness.append([idx, winners[3]!=winners[0], winners[4]!=winners[3], winners[6]!=winners[4], winners[6]!=winners[5]])
-		if sum(usefulness[-1][1:]) <= 0:
-			usefulness.pop()
-		satisfaction.append(distances[winners]/distances.min())
+	results['usefulness'] = [results[results.state==state].winner_name.nunique() for state in results.state]
+	results = results.sort_values(by='usefulness', ascending=False, kind='mergesort')
 
-	print(np.array(sorted(usefulness, key=lambda row: sum(row[1:]))))
+	print(results.to_string())
+	for system in ELECTORAL_SYSTEMS:
+		print("{} scores {} on average".format(system, results[results.system==system].winner_distance.mean()))
 
-	plt.violinplot(np.array(satisfaction))
+	sns.violinplot(x='system', y='winner_distance', inner=None, data=results)
 	plt.xlabel("Electoral system")
-	plt.xticks(ticks=1+np.arange(len(ELECTORAL_SYSTEMS)), labels=ELECTORAL_SYSTEMS)
 	plt.ylabel("Mean distance to capital (normalised)")
 	plt.show()
+
+	results.to_csv('results.csv')

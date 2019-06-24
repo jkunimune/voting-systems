@@ -125,8 +125,8 @@ def condorcet(candidates, voters, verbose):
 
 	if verbose:
 		print("Preferences:\n{}".format(votes/voters.shape[0]))
-	if not np.any(np.all(votes>=0, axis=1)):
-		raise RuntimeError("There is no Condorcet winner.")
+		if not np.any(np.all(votes>=0, axis=1)):
+			print("There is no Condorcet winner.")
 	return np.argmax(np.sum(votes>=0, axis=1))
 
 

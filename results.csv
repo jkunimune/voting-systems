@@ -1,0 +1,302 @@
+,state,system,winner_idx,winner_name,winner_distance,candidate_0,candidate_1,candidate_2,candidate_3,candidate_4,candidate_5,usefulness
+49,Oregon,Plurality,2,Eugene,1.2955001467179432,Portland,Salem,Eugene,Gresham,Hillsboro,Beaverton,5
+50,Oregon,Primary,3,Gresham,1.0515424475153958,Portland,Salem,Eugene,Gresham,Hillsboro,Beaverton,5
+51,Oregon,Runoff,1,Salem,1.0,Portland,Salem,Eugene,Gresham,Hillsboro,Beaverton,5
+52,Oregon,Instant-runoff,0,Portland,1.0201610670121235,Portland,Salem,Eugene,Gresham,Hillsboro,Beaverton,5
+53,Oregon,Condorcet,5,Beaverton,1.0099621559331315,Portland,Salem,Eugene,Gresham,Hillsboro,Beaverton,5
+54,Oregon,Approval,1,Salem,1.0,Portland,Salem,Eugene,Gresham,Hillsboro,Beaverton,5
+55,Oregon,Score,1,Salem,1.0,Portland,Salem,Eugene,Gresham,Hillsboro,Beaverton,5
+168,Colorado,Plurality,1,Colorado Springs,1.530841902559332,Denver,Colorado Springs,Aurora,Fort Collins,Lakewood,Thornton,4
+169,Colorado,Primary,2,Aurora,1.0399468618040457,Denver,Colorado Springs,Aurora,Fort Collins,Lakewood,Thornton,4
+170,Colorado,Runoff,4,Lakewood,1.0037349492606222,Denver,Colorado Springs,Aurora,Fort Collins,Lakewood,Thornton,4
+171,Colorado,Instant-runoff,4,Lakewood,1.0037349492606222,Denver,Colorado Springs,Aurora,Fort Collins,Lakewood,Thornton,4
+172,Colorado,Condorcet,0,Denver,1.0,Denver,Colorado Springs,Aurora,Fort Collins,Lakewood,Thornton,4
+173,Colorado,Approval,4,Lakewood,1.0037349492606222,Denver,Colorado Springs,Aurora,Fort Collins,Lakewood,Thornton,4
+174,Colorado,Score,4,Lakewood,1.0037349492606222,Denver,Colorado Springs,Aurora,Fort Collins,Lakewood,Thornton,4
+294,Michigan,Plurality,1,Grand Rapids,1.429140788070478,Detroit,Grand Rapids,Warren,Sterling Heights,Ann Arbor,Lansing,4
+295,Michigan,Primary,3,Sterling Heights,1.048372550501437,Detroit,Grand Rapids,Warren,Sterling Heights,Ann Arbor,Lansing,4
+296,Michigan,Runoff,3,Sterling Heights,1.048372550501437,Detroit,Grand Rapids,Warren,Sterling Heights,Ann Arbor,Lansing,4
+297,Michigan,Instant-runoff,3,Sterling Heights,1.048372550501437,Detroit,Grand Rapids,Warren,Sterling Heights,Ann Arbor,Lansing,4
+298,Michigan,Condorcet,4,Ann Arbor,1.0,Detroit,Grand Rapids,Warren,Sterling Heights,Ann Arbor,Lansing,4
+299,Michigan,Approval,5,Lansing,1.0449500184478715,Detroit,Grand Rapids,Warren,Sterling Heights,Ann Arbor,Lansing,4
+300,Michigan,Score,5,Lansing,1.0449500184478715,Detroit,Grand Rapids,Warren,Sterling Heights,Ann Arbor,Lansing,4
+0,Hawaii,Plurality,1,Pearl City,1.0368263744679103,Honolulu,Pearl City,Hilo,Kailua,,,3
+1,Hawaii,Primary,1,Pearl City,1.0368263744679103,Honolulu,Pearl City,Hilo,Kailua,,,3
+2,Hawaii,Runoff,0,Honolulu,1.0,Honolulu,Pearl City,Hilo,Kailua,,,3
+3,Hawaii,Instant-runoff,3,Kailua,1.0469045592834396,Honolulu,Pearl City,Hilo,Kailua,,,3
+4,Hawaii,Condorcet,0,Honolulu,1.0,Honolulu,Pearl City,Hilo,Kailua,,,3
+5,Hawaii,Approval,3,Kailua,1.0469045592834396,Honolulu,Pearl City,Hilo,Kailua,,,3
+6,Hawaii,Score,0,Honolulu,1.0,Honolulu,Pearl City,Hilo,Kailua,,,3
+7,Washington,Plurality,4,Bellevue,1.0046363418375428,Seattle,Spokane,Tacoma,Vancouver,Bellevue,Kent,3
+8,Washington,Primary,0,Seattle,1.014820378274283,Seattle,Spokane,Tacoma,Vancouver,Bellevue,Kent,3
+9,Washington,Runoff,4,Bellevue,1.0046363418375428,Seattle,Spokane,Tacoma,Vancouver,Bellevue,Kent,3
+10,Washington,Instant-runoff,4,Bellevue,1.0046363418375428,Seattle,Spokane,Tacoma,Vancouver,Bellevue,Kent,3
+11,Washington,Condorcet,4,Bellevue,1.0046363418375428,Seattle,Spokane,Tacoma,Vancouver,Bellevue,Kent,3
+12,Washington,Approval,5,Kent,1.0,Seattle,Spokane,Tacoma,Vancouver,Bellevue,Kent,3
+13,Washington,Score,5,Kent,1.0,Seattle,Spokane,Tacoma,Vancouver,Bellevue,Kent,3
+42,Minnesota,Plurality,5,Brooklyn Park,1.011896526175232,Minneapolis,St. Paul,Rochester,Bloomington,Duluth,Brooklyn Park,3
+43,Minnesota,Primary,3,Bloomington,1.0348559936344708,Minneapolis,St. Paul,Rochester,Bloomington,Duluth,Brooklyn Park,3
+44,Minnesota,Runoff,5,Brooklyn Park,1.011896526175232,Minneapolis,St. Paul,Rochester,Bloomington,Duluth,Brooklyn Park,3
+45,Minnesota,Instant-runoff,5,Brooklyn Park,1.011896526175232,Minneapolis,St. Paul,Rochester,Bloomington,Duluth,Brooklyn Park,3
+46,Minnesota,Condorcet,0,Minneapolis,1.0,Minneapolis,St. Paul,Rochester,Bloomington,Duluth,Brooklyn Park,3
+47,Minnesota,Approval,5,Brooklyn Park,1.011896526175232,Minneapolis,St. Paul,Rochester,Bloomington,Duluth,Brooklyn Park,3
+48,Minnesota,Score,5,Brooklyn Park,1.011896526175232,Minneapolis,St. Paul,Rochester,Bloomington,Duluth,Brooklyn Park,3
+70,Massachusetts,Plurality,0,Boston,1.0229152270485014,Boston,Worcester,Springfield,Lowell,Cambridge,New Bedford,3
+71,Massachusetts,Primary,4,Cambridge,1.0,Boston,Worcester,Springfield,Lowell,Cambridge,New Bedford,3
+72,Massachusetts,Runoff,4,Cambridge,1.0,Boston,Worcester,Springfield,Lowell,Cambridge,New Bedford,3
+73,Massachusetts,Instant-runoff,4,Cambridge,1.0,Boston,Worcester,Springfield,Lowell,Cambridge,New Bedford,3
+74,Massachusetts,Condorcet,4,Cambridge,1.0,Boston,Worcester,Springfield,Lowell,Cambridge,New Bedford,3
+75,Massachusetts,Approval,1,Worcester,1.302010172153963,Boston,Worcester,Springfield,Lowell,Cambridge,New Bedford,3
+76,Massachusetts,Score,4,Cambridge,1.0,Boston,Worcester,Springfield,Lowell,Cambridge,New Bedford,3
+84,New York,Plurality,0,New York,1.0285640319264415,New York,Buffalo,Rochester,Yonkers,Syracuse,Albany,3
+85,New York,Primary,0,New York,1.0285640319264415,New York,Buffalo,Rochester,Yonkers,Syracuse,Albany,3
+86,New York,Runoff,3,Yonkers,1.0,New York,Buffalo,Rochester,Yonkers,Syracuse,Albany,3
+87,New York,Instant-runoff,3,Yonkers,1.0,New York,Buffalo,Rochester,Yonkers,Syracuse,Albany,3
+88,New York,Condorcet,3,Yonkers,1.0,New York,Buffalo,Rochester,Yonkers,Syracuse,Albany,3
+89,New York,Approval,5,Albany,1.5731345138738115,New York,Buffalo,Rochester,Yonkers,Syracuse,Albany,3
+90,New York,Score,3,Yonkers,1.0,New York,Buffalo,Rochester,Yonkers,Syracuse,Albany,3
+91,Pennsylvania,Plurality,1,Pittsburgh,1.6405511833622288,Philadelphia,Pittsburgh,Allentown,Erie,Reading,Scranton,3
+92,Pennsylvania,Primary,0,Philadelphia,1.181021046884372,Philadelphia,Pittsburgh,Allentown,Erie,Reading,Scranton,3
+93,Pennsylvania,Runoff,0,Philadelphia,1.181021046884372,Philadelphia,Pittsburgh,Allentown,Erie,Reading,Scranton,3
+94,Pennsylvania,Instant-runoff,4,Reading,1.0,Philadelphia,Pittsburgh,Allentown,Erie,Reading,Scranton,3
+95,Pennsylvania,Condorcet,4,Reading,1.0,Philadelphia,Pittsburgh,Allentown,Erie,Reading,Scranton,3
+96,Pennsylvania,Approval,4,Reading,1.0,Philadelphia,Pittsburgh,Allentown,Erie,Reading,Scranton,3
+97,Pennsylvania,Score,4,Reading,1.0,Philadelphia,Pittsburgh,Allentown,Erie,Reading,Scranton,3
+98,Connecticut,Plurality,3,Hartford,1.1316090376832062,Bridgeport,New Haven,Stamford,Hartford,Waterbury,Norwalk,3
+99,Connecticut,Primary,1,New Haven,1.0405204448708512,Bridgeport,New Haven,Stamford,Hartford,Waterbury,Norwalk,3
+100,Connecticut,Runoff,4,Waterbury,1.0,Bridgeport,New Haven,Stamford,Hartford,Waterbury,Norwalk,3
+101,Connecticut,Instant-runoff,3,Hartford,1.1316090376832062,Bridgeport,New Haven,Stamford,Hartford,Waterbury,Norwalk,3
+102,Connecticut,Condorcet,4,Waterbury,1.0,Bridgeport,New Haven,Stamford,Hartford,Waterbury,Norwalk,3
+103,Connecticut,Approval,1,New Haven,1.0405204448708512,Bridgeport,New Haven,Stamford,Hartford,Waterbury,Norwalk,3
+104,Connecticut,Score,4,Waterbury,1.0,Bridgeport,New Haven,Stamford,Hartford,Waterbury,Norwalk,3
+105,Rhode Island,Plurality,1,Warwick,1.165419739837648,Providence,Warwick,Cranston,Pawtucket,East Providence,Woonsocket,3
+106,Rhode Island,Primary,0,Providence,1.0430891051918951,Providence,Warwick,Cranston,Pawtucket,East Providence,Woonsocket,3
+107,Rhode Island,Runoff,0,Providence,1.0430891051918951,Providence,Warwick,Cranston,Pawtucket,East Providence,Woonsocket,3
+108,Rhode Island,Instant-runoff,0,Providence,1.0430891051918951,Providence,Warwick,Cranston,Pawtucket,East Providence,Woonsocket,3
+109,Rhode Island,Condorcet,2,Cranston,1.0,Providence,Warwick,Cranston,Pawtucket,East Providence,Woonsocket,3
+110,Rhode Island,Approval,0,Providence,1.0430891051918951,Providence,Warwick,Cranston,Pawtucket,East Providence,Woonsocket,3
+111,Rhode Island,Score,0,Providence,1.0430891051918951,Providence,Warwick,Cranston,Pawtucket,East Providence,Woonsocket,3
+112,New Jersey,Plurality,5,Trenton,1.2858564125350274,Newark,Jersey City,Paterson,Elizabeth,Clifton,Trenton,3
+113,New Jersey,Primary,3,Elizabeth,1.0,Newark,Jersey City,Paterson,Elizabeth,Clifton,Trenton,3
+114,New Jersey,Runoff,3,Elizabeth,1.0,Newark,Jersey City,Paterson,Elizabeth,Clifton,Trenton,3
+115,New Jersey,Instant-runoff,4,Clifton,1.1423379877093038,Newark,Jersey City,Paterson,Elizabeth,Clifton,Trenton,3
+116,New Jersey,Condorcet,3,Elizabeth,1.0,Newark,Jersey City,Paterson,Elizabeth,Clifton,Trenton,3
+117,New Jersey,Approval,3,Elizabeth,1.0,Newark,Jersey City,Paterson,Elizabeth,Clifton,Trenton,3
+118,New Jersey,Score,3,Elizabeth,1.0,Newark,Jersey City,Paterson,Elizabeth,Clifton,Trenton,3
+133,Utah,Plurality,0,Salt Lake City,1.0192435967753988,Salt Lake City,West Valley City,Provo,West Jordan,Orem,Sandy,3
+134,Utah,Primary,0,Salt Lake City,1.0192435967753988,Salt Lake City,West Valley City,Provo,West Jordan,Orem,Sandy,3
+135,Utah,Runoff,0,Salt Lake City,1.0192435967753988,Salt Lake City,West Valley City,Provo,West Jordan,Orem,Sandy,3
+136,Utah,Instant-runoff,0,Salt Lake City,1.0192435967753988,Salt Lake City,West Valley City,Provo,West Jordan,Orem,Sandy,3
+137,Utah,Condorcet,3,West Jordan,1.0,Salt Lake City,West Valley City,Provo,West Jordan,Orem,Sandy,3
+138,Utah,Approval,5,Sandy,1.0125687778228436,Salt Lake City,West Valley City,Provo,West Jordan,Orem,Sandy,3
+139,Utah,Score,3,West Jordan,1.0,Salt Lake City,West Valley City,Provo,West Jordan,Orem,Sandy,3
+154,Illinois,Plurality,0,Chicago,1.0629975462495533,Chicago,Aurora,Rockford,Joliet,Naperville,Springfield,3
+155,Illinois,Primary,0,Chicago,1.0629975462495533,Chicago,Aurora,Rockford,Joliet,Naperville,Springfield,3
+156,Illinois,Runoff,0,Chicago,1.0629975462495533,Chicago,Aurora,Rockford,Joliet,Naperville,Springfield,3
+157,Illinois,Instant-runoff,4,Naperville,1.0,Chicago,Aurora,Rockford,Joliet,Naperville,Springfield,3
+158,Illinois,Condorcet,4,Naperville,1.0,Chicago,Aurora,Rockford,Joliet,Naperville,Springfield,3
+159,Illinois,Approval,1,Aurora,1.0344154543441562,Chicago,Aurora,Rockford,Joliet,Naperville,Springfield,3
+160,Illinois,Score,4,Naperville,1.0,Chicago,Aurora,Rockford,Joliet,Naperville,Springfield,3
+203,Arizona,Plurality,4,Glendale,1.0425723910801497,Phoenix,Tucson,Mesa,Chandler,Glendale,Gilbert,3
+204,Arizona,Primary,4,Glendale,1.0425723910801497,Phoenix,Tucson,Mesa,Chandler,Glendale,Gilbert,3
+205,Arizona,Runoff,4,Glendale,1.0425723910801497,Phoenix,Tucson,Mesa,Chandler,Glendale,Gilbert,3
+206,Arizona,Instant-runoff,2,Mesa,1.000010155268307,Phoenix,Tucson,Mesa,Chandler,Glendale,Gilbert,3
+207,Arizona,Condorcet,2,Mesa,1.000010155268307,Phoenix,Tucson,Mesa,Chandler,Glendale,Gilbert,3
+208,Arizona,Approval,3,Chandler,1.0217250626706578,Phoenix,Tucson,Mesa,Chandler,Glendale,Gilbert,3
+209,Arizona,Score,2,Mesa,1.000010155268307,Phoenix,Tucson,Mesa,Chandler,Glendale,Gilbert,3
+210,Oklahoma,Plurality,3,Broken Arrow,1.1623869238601294,Oklahoma City,Tulsa,Norman,Broken Arrow,Lawton,Edmond,3
+211,Oklahoma,Primary,0,Oklahoma City,1.0,Oklahoma City,Tulsa,Norman,Broken Arrow,Lawton,Edmond,3
+212,Oklahoma,Runoff,0,Oklahoma City,1.0,Oklahoma City,Tulsa,Norman,Broken Arrow,Lawton,Edmond,3
+213,Oklahoma,Instant-runoff,0,Oklahoma City,1.0,Oklahoma City,Tulsa,Norman,Broken Arrow,Lawton,Edmond,3
+214,Oklahoma,Condorcet,5,Edmond,1.0046748854098557,Oklahoma City,Tulsa,Norman,Broken Arrow,Lawton,Edmond,3
+215,Oklahoma,Approval,5,Edmond,1.0046748854098557,Oklahoma City,Tulsa,Norman,Broken Arrow,Lawton,Edmond,3
+216,Oklahoma,Score,0,Oklahoma City,1.0,Oklahoma City,Tulsa,Norman,Broken Arrow,Lawton,Edmond,3
+217,North Carolina,Plurality,0,Charlotte,1.1277632909177593,Charlotte,Raleigh,Greensboro,Durham,Winston-Salem,Fayetteville,3
+218,North Carolina,Primary,1,Raleigh,1.089851358917959,Charlotte,Raleigh,Greensboro,Durham,Winston-Salem,Fayetteville,3
+219,North Carolina,Runoff,1,Raleigh,1.089851358917959,Charlotte,Raleigh,Greensboro,Durham,Winston-Salem,Fayetteville,3
+220,North Carolina,Instant-runoff,1,Raleigh,1.089851358917959,Charlotte,Raleigh,Greensboro,Durham,Winston-Salem,Fayetteville,3
+221,North Carolina,Condorcet,2,Greensboro,1.0,Charlotte,Raleigh,Greensboro,Durham,Winston-Salem,Fayetteville,3
+222,North Carolina,Approval,2,Greensboro,1.0,Charlotte,Raleigh,Greensboro,Durham,Winston-Salem,Fayetteville,3
+223,North Carolina,Score,2,Greensboro,1.0,Charlotte,Raleigh,Greensboro,Durham,Winston-Salem,Fayetteville,3
+224,Tennessee,Plurality,2,Knoxville,1.3984052420621211,Memphis,Nashville,Knoxville,Chattanooga,Clarksville,Murfreesboro,3
+225,Tennessee,Primary,2,Knoxville,1.3984052420621211,Memphis,Nashville,Knoxville,Chattanooga,Clarksville,Murfreesboro,3
+226,Tennessee,Runoff,2,Knoxville,1.3984052420621211,Memphis,Nashville,Knoxville,Chattanooga,Clarksville,Murfreesboro,3
+227,Tennessee,Instant-runoff,1,Nashville,1.0186593047413193,Memphis,Nashville,Knoxville,Chattanooga,Clarksville,Murfreesboro,3
+228,Tennessee,Condorcet,5,Murfreesboro,1.0,Memphis,Nashville,Knoxville,Chattanooga,Clarksville,Murfreesboro,3
+229,Tennessee,Approval,1,Nashville,1.0186593047413193,Memphis,Nashville,Knoxville,Chattanooga,Clarksville,Murfreesboro,3
+230,Tennessee,Score,1,Nashville,1.0186593047413193,Memphis,Nashville,Knoxville,Chattanooga,Clarksville,Murfreesboro,3
+231,Texas,Plurality,0,Houston,1.1050541323435383,Houston,San Antonio,Dallas,Austin,Fort Worth,El Paso,3
+232,Texas,Primary,0,Houston,1.1050541323435383,Houston,San Antonio,Dallas,Austin,Fort Worth,El Paso,3
+233,Texas,Runoff,0,Houston,1.1050541323435383,Houston,San Antonio,Dallas,Austin,Fort Worth,El Paso,3
+234,Texas,Instant-runoff,1,San Antonio,1.176961599029811,Houston,San Antonio,Dallas,Austin,Fort Worth,El Paso,3
+235,Texas,Condorcet,3,Austin,1.0,Houston,San Antonio,Dallas,Austin,Fort Worth,El Paso,3
+236,Texas,Approval,3,Austin,1.0,Houston,San Antonio,Dallas,Austin,Fort Worth,El Paso,3
+237,Texas,Score,3,Austin,1.0,Houston,San Antonio,Dallas,Austin,Fort Worth,El Paso,3
+245,Alabama,Plurality,1,Montgomery,1.1904871353576418,Birmingham,Montgomery,Mobile,Huntsville,Tuscaloosa,Hoover,3
+246,Alabama,Primary,1,Montgomery,1.1904871353576418,Birmingham,Montgomery,Mobile,Huntsville,Tuscaloosa,Hoover,3
+247,Alabama,Runoff,1,Montgomery,1.1904871353576418,Birmingham,Montgomery,Mobile,Huntsville,Tuscaloosa,Hoover,3
+248,Alabama,Instant-runoff,0,Birmingham,1.0082763731390127,Birmingham,Montgomery,Mobile,Huntsville,Tuscaloosa,Hoover,3
+249,Alabama,Condorcet,5,Hoover,1.0,Birmingham,Montgomery,Mobile,Huntsville,Tuscaloosa,Hoover,3
+250,Alabama,Approval,5,Hoover,1.0,Birmingham,Montgomery,Mobile,Huntsville,Tuscaloosa,Hoover,3
+251,Alabama,Score,5,Hoover,1.0,Birmingham,Montgomery,Mobile,Huntsville,Tuscaloosa,Hoover,3
+259,Georgia,Plurality,5,Sandy Springs,1.032617598122696,Atlanta,Columbus,Augusta-Richmond,Savannah,Athens-Clarke,Sandy Springs,3
+260,Georgia,Primary,5,Sandy Springs,1.032617598122696,Atlanta,Columbus,Augusta-Richmond,Savannah,Athens-Clarke,Sandy Springs,3
+261,Georgia,Runoff,0,Atlanta,1.0,Atlanta,Columbus,Augusta-Richmond,Savannah,Athens-Clarke,Sandy Springs,3
+262,Georgia,Instant-runoff,0,Atlanta,1.0,Atlanta,Columbus,Augusta-Richmond,Savannah,Athens-Clarke,Sandy Springs,3
+263,Georgia,Condorcet,0,Atlanta,1.0,Atlanta,Columbus,Augusta-Richmond,Savannah,Athens-Clarke,Sandy Springs,3
+264,Georgia,Approval,4,Athens-Clarke,1.2555671483439963,Atlanta,Columbus,Augusta-Richmond,Savannah,Athens-Clarke,Sandy Springs,3
+265,Georgia,Score,0,Atlanta,1.0,Atlanta,Columbus,Augusta-Richmond,Savannah,Athens-Clarke,Sandy Springs,3
+280,Louisiana,Plurality,0,New Orleans,1.24620667305112,New Orleans,Baton Rouge,Shreveport,Lafayette,Lake Charles,Kenner,3
+281,Louisiana,Primary,1,Baton Rouge,1.0,New Orleans,Baton Rouge,Shreveport,Lafayette,Lake Charles,Kenner,3
+282,Louisiana,Runoff,1,Baton Rouge,1.0,New Orleans,Baton Rouge,Shreveport,Lafayette,Lake Charles,Kenner,3
+283,Louisiana,Instant-runoff,3,Lafayette,1.1421899925462935,New Orleans,Baton Rouge,Shreveport,Lafayette,Lake Charles,Kenner,3
+284,Louisiana,Condorcet,1,Baton Rouge,1.0,New Orleans,Baton Rouge,Shreveport,Lafayette,Lake Charles,Kenner,3
+285,Louisiana,Approval,3,Lafayette,1.1421899925462935,New Orleans,Baton Rouge,Shreveport,Lafayette,Lake Charles,Kenner,3
+286,Louisiana,Score,1,Baton Rouge,1.0,New Orleans,Baton Rouge,Shreveport,Lafayette,Lake Charles,Kenner,3
+287,Florida,Plurality,5,Hialeah,1.3217193361803004,Jacksonville,Miami,Tampa,Orlando,St. Petersburg,Hialeah,3
+288,Florida,Primary,3,Orlando,1.0,Jacksonville,Miami,Tampa,Orlando,St. Petersburg,Hialeah,3
+289,Florida,Runoff,3,Orlando,1.0,Jacksonville,Miami,Tampa,Orlando,St. Petersburg,Hialeah,3
+290,Florida,Instant-runoff,2,Tampa,1.0074496554948336,Jacksonville,Miami,Tampa,Orlando,St. Petersburg,Hialeah,3
+291,Florida,Condorcet,3,Orlando,1.0,Jacksonville,Miami,Tampa,Orlando,St. Petersburg,Hialeah,3
+292,Florida,Approval,3,Orlando,1.0,Jacksonville,Miami,Tampa,Orlando,St. Petersburg,Hialeah,3
+293,Florida,Score,3,Orlando,1.0,Jacksonville,Miami,Tampa,Orlando,St. Petersburg,Hialeah,3
+14,Montana,Plurality,1,Missoula,1.1613529006834011,Billings,Missoula,Great Falls,Bozeman,,,2
+15,Montana,Primary,1,Missoula,1.1613529006834011,Billings,Missoula,Great Falls,Bozeman,,,2
+16,Montana,Runoff,1,Missoula,1.1613529006834011,Billings,Missoula,Great Falls,Bozeman,,,2
+17,Montana,Instant-runoff,1,Missoula,1.1613529006834011,Billings,Missoula,Great Falls,Bozeman,,,2
+18,Montana,Condorcet,2,Great Falls,1.0,Billings,Missoula,Great Falls,Bozeman,,,2
+19,Montana,Approval,2,Great Falls,1.0,Billings,Missoula,Great Falls,Bozeman,,,2
+20,Montana,Score,2,Great Falls,1.0,Billings,Missoula,Great Falls,Bozeman,,,2
+21,North Dakota,Plurality,0,Fargo,1.1368656135652584,Fargo,Bismarck,Grand Forks,Minot,,,2
+22,North Dakota,Primary,1,Bismarck,1.0,Fargo,Bismarck,Grand Forks,Minot,,,2
+23,North Dakota,Runoff,1,Bismarck,1.0,Fargo,Bismarck,Grand Forks,Minot,,,2
+24,North Dakota,Instant-runoff,1,Bismarck,1.0,Fargo,Bismarck,Grand Forks,Minot,,,2
+25,North Dakota,Condorcet,1,Bismarck,1.0,Fargo,Bismarck,Grand Forks,Minot,,,2
+26,North Dakota,Approval,1,Bismarck,1.0,Fargo,Bismarck,Grand Forks,Minot,,,2
+27,North Dakota,Score,1,Bismarck,1.0,Fargo,Bismarck,Grand Forks,Minot,,,2
+28,Wisconsin,Plurality,0,Milwaukee,1.0,Milwaukee,Madison,Green Bay,Kenosha,Racine,Appleton,2
+29,Wisconsin,Primary,0,Milwaukee,1.0,Milwaukee,Madison,Green Bay,Kenosha,Racine,Appleton,2
+30,Wisconsin,Runoff,0,Milwaukee,1.0,Milwaukee,Madison,Green Bay,Kenosha,Racine,Appleton,2
+31,Wisconsin,Instant-runoff,0,Milwaukee,1.0,Milwaukee,Madison,Green Bay,Kenosha,Racine,Appleton,2
+32,Wisconsin,Condorcet,0,Milwaukee,1.0,Milwaukee,Madison,Green Bay,Kenosha,Racine,Appleton,2
+33,Wisconsin,Approval,1,Madison,1.0127545392156216,Milwaukee,Madison,Green Bay,Kenosha,Racine,Appleton,2
+34,Wisconsin,Score,0,Milwaukee,1.0,Milwaukee,Madison,Green Bay,Kenosha,Racine,Appleton,2
+35,Idaho,Plurality,5,Caldwell,1.072893356050853,Boise City,Nampa,Meridian,Idaho Falls,Pocatello,Caldwell,2
+36,Idaho,Primary,5,Caldwell,1.072893356050853,Boise City,Nampa,Meridian,Idaho Falls,Pocatello,Caldwell,2
+37,Idaho,Runoff,0,Boise City,1.0,Boise City,Nampa,Meridian,Idaho Falls,Pocatello,Caldwell,2
+38,Idaho,Instant-runoff,5,Caldwell,1.072893356050853,Boise City,Nampa,Meridian,Idaho Falls,Pocatello,Caldwell,2
+39,Idaho,Condorcet,0,Boise City,1.0,Boise City,Nampa,Meridian,Idaho Falls,Pocatello,Caldwell,2
+40,Idaho,Approval,0,Boise City,1.0,Boise City,Nampa,Meridian,Idaho Falls,Pocatello,Caldwell,2
+41,Idaho,Score,0,Boise City,1.0,Boise City,Nampa,Meridian,Idaho Falls,Pocatello,Caldwell,2
+56,New Hampshire,Plurality,2,Concord,1.079700928682104,Manchester,Nashua,Concord,,,,2
+57,New Hampshire,Primary,0,Manchester,1.0,Manchester,Nashua,Concord,,,,2
+58,New Hampshire,Runoff,0,Manchester,1.0,Manchester,Nashua,Concord,,,,2
+59,New Hampshire,Instant-runoff,0,Manchester,1.0,Manchester,Nashua,Concord,,,,2
+60,New Hampshire,Condorcet,0,Manchester,1.0,Manchester,Nashua,Concord,,,,2
+61,New Hampshire,Approval,0,Manchester,1.0,Manchester,Nashua,Concord,,,,2
+62,New Hampshire,Score,0,Manchester,1.0,Manchester,Nashua,Concord,,,,2
+77,Nebraska,Plurality,0,Omaha,1.0462180183856562,Omaha,Lincoln,Bellevue,Grand Island,,,2
+78,Nebraska,Primary,0,Omaha,1.0462180183856562,Omaha,Lincoln,Bellevue,Grand Island,,,2
+79,Nebraska,Runoff,0,Omaha,1.0462180183856562,Omaha,Lincoln,Bellevue,Grand Island,,,2
+80,Nebraska,Instant-runoff,0,Omaha,1.0462180183856562,Omaha,Lincoln,Bellevue,Grand Island,,,2
+81,Nebraska,Condorcet,1,Lincoln,1.0,Omaha,Lincoln,Bellevue,Grand Island,,,2
+82,Nebraska,Approval,1,Lincoln,1.0,Omaha,Lincoln,Bellevue,Grand Island,,,2
+83,Nebraska,Score,1,Lincoln,1.0,Omaha,Lincoln,Bellevue,Grand Island,,,2
+119,Indiana,Plurality,0,Indianapolis,1.024180784943888,Indianapolis,Fort Wayne,Evansville,South Bend,Carmel,Fishers,2
+120,Indiana,Primary,0,Indianapolis,1.024180784943888,Indianapolis,Fort Wayne,Evansville,South Bend,Carmel,Fishers,2
+121,Indiana,Runoff,0,Indianapolis,1.024180784943888,Indianapolis,Fort Wayne,Evansville,South Bend,Carmel,Fishers,2
+122,Indiana,Instant-runoff,0,Indianapolis,1.024180784943888,Indianapolis,Fort Wayne,Evansville,South Bend,Carmel,Fishers,2
+123,Indiana,Condorcet,4,Carmel,1.0,Indianapolis,Fort Wayne,Evansville,South Bend,Carmel,Fishers,2
+124,Indiana,Approval,4,Carmel,1.0,Indianapolis,Fort Wayne,Evansville,South Bend,Carmel,Fishers,2
+125,Indiana,Score,0,Indianapolis,1.024180784943888,Indianapolis,Fort Wayne,Evansville,South Bend,Carmel,Fishers,2
+126,Nevada,Plurality,0,Las Vegas,1.0,Las Vegas,Henderson,Reno,North Las Vegas,Sparks,Carson City,2
+127,Nevada,Primary,0,Las Vegas,1.0,Las Vegas,Henderson,Reno,North Las Vegas,Sparks,Carson City,2
+128,Nevada,Runoff,0,Las Vegas,1.0,Las Vegas,Henderson,Reno,North Las Vegas,Sparks,Carson City,2
+129,Nevada,Instant-runoff,0,Las Vegas,1.0,Las Vegas,Henderson,Reno,North Las Vegas,Sparks,Carson City,2
+130,Nevada,Condorcet,0,Las Vegas,1.0,Las Vegas,Henderson,Reno,North Las Vegas,Sparks,Carson City,2
+131,Nevada,Approval,3,North Las Vegas,1.0030355233631096,Las Vegas,Henderson,Reno,North Las Vegas,Sparks,Carson City,2
+132,Nevada,Score,3,North Las Vegas,1.0030355233631096,Las Vegas,Henderson,Reno,North Las Vegas,Sparks,Carson City,2
+147,Ohio,Plurality,0,Columbus,1.0,Columbus,Cleveland,Cincinnati,Toledo,Akron,Dayton,2
+148,Ohio,Primary,0,Columbus,1.0,Columbus,Cleveland,Cincinnati,Toledo,Akron,Dayton,2
+149,Ohio,Runoff,0,Columbus,1.0,Columbus,Cleveland,Cincinnati,Toledo,Akron,Dayton,2
+150,Ohio,Instant-runoff,5,Dayton,1.259096641307727,Columbus,Cleveland,Cincinnati,Toledo,Akron,Dayton,2
+151,Ohio,Condorcet,0,Columbus,1.0,Columbus,Cleveland,Cincinnati,Toledo,Akron,Dayton,2
+152,Ohio,Approval,0,Columbus,1.0,Columbus,Cleveland,Cincinnati,Toledo,Akron,Dayton,2
+153,Ohio,Score,0,Columbus,1.0,Columbus,Cleveland,Cincinnati,Toledo,Akron,Dayton,2
+161,Maryland,Plurality,0,Baltimore,1.0062057860897915,Baltimore,Frederick,Gaithersburg,Rockville,Bowie,Hagerstown,2
+162,Maryland,Primary,0,Baltimore,1.0062057860897915,Baltimore,Frederick,Gaithersburg,Rockville,Bowie,Hagerstown,2
+163,Maryland,Runoff,4,Bowie,1.0,Baltimore,Frederick,Gaithersburg,Rockville,Bowie,Hagerstown,2
+164,Maryland,Instant-runoff,4,Bowie,1.0,Baltimore,Frederick,Gaithersburg,Rockville,Bowie,Hagerstown,2
+165,Maryland,Condorcet,4,Bowie,1.0,Baltimore,Frederick,Gaithersburg,Rockville,Bowie,Hagerstown,2
+166,Maryland,Approval,4,Bowie,1.0,Baltimore,Frederick,Gaithersburg,Rockville,Bowie,Hagerstown,2
+167,Maryland,Score,0,Baltimore,1.0062057860897915,Baltimore,Frederick,Gaithersburg,Rockville,Bowie,Hagerstown,2
+175,Kentucky,Plurality,1,Lexington-Fayette,1.0,Louisville,Lexington-Fayette,Bowling Green,Owensboro,Covington,,2
+176,Kentucky,Primary,1,Lexington-Fayette,1.0,Louisville,Lexington-Fayette,Bowling Green,Owensboro,Covington,,2
+177,Kentucky,Runoff,1,Lexington-Fayette,1.0,Louisville,Lexington-Fayette,Bowling Green,Owensboro,Covington,,2
+178,Kentucky,Instant-runoff,1,Lexington-Fayette,1.0,Louisville,Lexington-Fayette,Bowling Green,Owensboro,Covington,,2
+179,Kentucky,Condorcet,1,Lexington-Fayette,1.0,Louisville,Lexington-Fayette,Bowling Green,Owensboro,Covington,,2
+180,Kentucky,Approval,0,Louisville,1.0023634583282621,Louisville,Lexington-Fayette,Bowling Green,Owensboro,Covington,,2
+181,Kentucky,Score,0,Louisville,1.0023634583282621,Louisville,Lexington-Fayette,Bowling Green,Owensboro,Covington,,2
+182,Kansas,Plurality,0,Wichita,1.0673547746580008,Wichita,Overland Park,Kansas City,Olathe,Topeka,Lawrence,2
+183,Kansas,Primary,4,Topeka,1.0,Wichita,Overland Park,Kansas City,Olathe,Topeka,Lawrence,2
+184,Kansas,Runoff,4,Topeka,1.0,Wichita,Overland Park,Kansas City,Olathe,Topeka,Lawrence,2
+185,Kansas,Instant-runoff,0,Wichita,1.0673547746580008,Wichita,Overland Park,Kansas City,Olathe,Topeka,Lawrence,2
+186,Kansas,Condorcet,4,Topeka,1.0,Wichita,Overland Park,Kansas City,Olathe,Topeka,Lawrence,2
+187,Kansas,Approval,4,Topeka,1.0,Wichita,Overland Park,Kansas City,Olathe,Topeka,Lawrence,2
+188,Kansas,Score,4,Topeka,1.0,Wichita,Overland Park,Kansas City,Olathe,Topeka,Lawrence,2
+189,Virginia,Plurality,3,Richmond,1.0,Virginia Beach,Norfolk,Chesapeake,Richmond,Newport News,Alexandria,2
+190,Virginia,Primary,5,Alexandria,1.202986513184534,Virginia Beach,Norfolk,Chesapeake,Richmond,Newport News,Alexandria,2
+191,Virginia,Runoff,3,Richmond,1.0,Virginia Beach,Norfolk,Chesapeake,Richmond,Newport News,Alexandria,2
+192,Virginia,Instant-runoff,3,Richmond,1.0,Virginia Beach,Norfolk,Chesapeake,Richmond,Newport News,Alexandria,2
+193,Virginia,Condorcet,3,Richmond,1.0,Virginia Beach,Norfolk,Chesapeake,Richmond,Newport News,Alexandria,2
+194,Virginia,Approval,3,Richmond,1.0,Virginia Beach,Norfolk,Chesapeake,Richmond,Newport News,Alexandria,2
+195,Virginia,Score,3,Richmond,1.0,Virginia Beach,Norfolk,Chesapeake,Richmond,Newport News,Alexandria,2
+196,Missouri,Plurality,1,St. Louis,1.1311204044255685,Kansas City,St. Louis,Springfield,Independence,Columbia,Lee's Summit,2
+197,Missouri,Primary,1,St. Louis,1.1311204044255685,Kansas City,St. Louis,Springfield,Independence,Columbia,Lee's Summit,2
+198,Missouri,Runoff,1,St. Louis,1.1311204044255685,Kansas City,St. Louis,Springfield,Independence,Columbia,Lee's Summit,2
+199,Missouri,Instant-runoff,1,St. Louis,1.1311204044255685,Kansas City,St. Louis,Springfield,Independence,Columbia,Lee's Summit,2
+200,Missouri,Condorcet,4,Columbia,1.0,Kansas City,St. Louis,Springfield,Independence,Columbia,Lee's Summit,2
+201,Missouri,Approval,4,Columbia,1.0,Kansas City,St. Louis,Springfield,Independence,Columbia,Lee's Summit,2
+202,Missouri,Score,4,Columbia,1.0,Kansas City,St. Louis,Springfield,Independence,Columbia,Lee's Summit,2
+273,Arkansas,Plurality,0,Little Rock,1.000812009078158,Little Rock,Fort Smith,Fayetteville,Springdale,Jonesboro,North Little Rock,2
+274,Arkansas,Primary,0,Little Rock,1.000812009078158,Little Rock,Fort Smith,Fayetteville,Springdale,Jonesboro,North Little Rock,2
+275,Arkansas,Runoff,0,Little Rock,1.000812009078158,Little Rock,Fort Smith,Fayetteville,Springdale,Jonesboro,North Little Rock,2
+276,Arkansas,Instant-runoff,0,Little Rock,1.000812009078158,Little Rock,Fort Smith,Fayetteville,Springdale,Jonesboro,North Little Rock,2
+277,Arkansas,Condorcet,5,North Little Rock,1.0,Little Rock,Fort Smith,Fayetteville,Springdale,Jonesboro,North Little Rock,2
+278,Arkansas,Approval,5,North Little Rock,1.0,Little Rock,Fort Smith,Fayetteville,Springdale,Jonesboro,North Little Rock,2
+279,Arkansas,Score,5,North Little Rock,1.0,Little Rock,Fort Smith,Fayetteville,Springdale,Jonesboro,North Little Rock,2
+63,Iowa,Plurality,0,Des Moines,1.0,Des Moines,Cedar Rapids,Davenport,Sioux City,Iowa City,Waterloo,1
+64,Iowa,Primary,0,Des Moines,1.0,Des Moines,Cedar Rapids,Davenport,Sioux City,Iowa City,Waterloo,1
+65,Iowa,Runoff,0,Des Moines,1.0,Des Moines,Cedar Rapids,Davenport,Sioux City,Iowa City,Waterloo,1
+66,Iowa,Instant-runoff,0,Des Moines,1.0,Des Moines,Cedar Rapids,Davenport,Sioux City,Iowa City,Waterloo,1
+67,Iowa,Condorcet,0,Des Moines,1.0,Des Moines,Cedar Rapids,Davenport,Sioux City,Iowa City,Waterloo,1
+68,Iowa,Approval,0,Des Moines,1.0,Des Moines,Cedar Rapids,Davenport,Sioux City,Iowa City,Waterloo,1
+69,Iowa,Score,0,Des Moines,1.0,Des Moines,Cedar Rapids,Davenport,Sioux City,Iowa City,Waterloo,1
+140,California,Plurality,0,Los Angeles,1.0,Los Angeles,San Diego,San Jose,San Francisco,Fresno,Sacramento,1
+141,California,Primary,0,Los Angeles,1.0,Los Angeles,San Diego,San Jose,San Francisco,Fresno,Sacramento,1
+142,California,Runoff,0,Los Angeles,1.0,Los Angeles,San Diego,San Jose,San Francisco,Fresno,Sacramento,1
+143,California,Instant-runoff,0,Los Angeles,1.0,Los Angeles,San Diego,San Jose,San Francisco,Fresno,Sacramento,1
+144,California,Condorcet,0,Los Angeles,1.0,Los Angeles,San Diego,San Jose,San Francisco,Fresno,Sacramento,1
+145,California,Approval,0,Los Angeles,1.0,Los Angeles,San Diego,San Jose,San Francisco,Fresno,Sacramento,1
+146,California,Score,0,Los Angeles,1.0,Los Angeles,San Diego,San Jose,San Francisco,Fresno,Sacramento,1
+238,New Mexico,Plurality,0,Albuquerque,1.0,Albuquerque,Las Cruces,Rio Rancho,Santa Fe,Roswell,Farmington,1
+239,New Mexico,Primary,0,Albuquerque,1.0,Albuquerque,Las Cruces,Rio Rancho,Santa Fe,Roswell,Farmington,1
+240,New Mexico,Runoff,0,Albuquerque,1.0,Albuquerque,Las Cruces,Rio Rancho,Santa Fe,Roswell,Farmington,1
+241,New Mexico,Instant-runoff,0,Albuquerque,1.0,Albuquerque,Las Cruces,Rio Rancho,Santa Fe,Roswell,Farmington,1
+242,New Mexico,Condorcet,0,Albuquerque,1.0,Albuquerque,Las Cruces,Rio Rancho,Santa Fe,Roswell,Farmington,1
+243,New Mexico,Approval,0,Albuquerque,1.0,Albuquerque,Las Cruces,Rio Rancho,Santa Fe,Roswell,Farmington,1
+244,New Mexico,Score,0,Albuquerque,1.0,Albuquerque,Las Cruces,Rio Rancho,Santa Fe,Roswell,Farmington,1
+252,Mississippi,Plurality,0,Jackson,1.0,Jackson,Gulfport,Southaven,Hattiesburg,Biloxi,Meridian,1
+253,Mississippi,Primary,0,Jackson,1.0,Jackson,Gulfport,Southaven,Hattiesburg,Biloxi,Meridian,1
+254,Mississippi,Runoff,0,Jackson,1.0,Jackson,Gulfport,Southaven,Hattiesburg,Biloxi,Meridian,1
+255,Mississippi,Instant-runoff,0,Jackson,1.0,Jackson,Gulfport,Southaven,Hattiesburg,Biloxi,Meridian,1
+256,Mississippi,Condorcet,0,Jackson,1.0,Jackson,Gulfport,Southaven,Hattiesburg,Biloxi,Meridian,1
+257,Mississippi,Approval,0,Jackson,1.0,Jackson,Gulfport,Southaven,Hattiesburg,Biloxi,Meridian,1
+258,Mississippi,Score,0,Jackson,1.0,Jackson,Gulfport,Southaven,Hattiesburg,Biloxi,Meridian,1
+266,South Carolina,Plurality,0,Columbia,1.0,Columbia,Charleston,North Charleston,Mount Pleasant,Rock Hill,Greenville,1
+267,South Carolina,Primary,0,Columbia,1.0,Columbia,Charleston,North Charleston,Mount Pleasant,Rock Hill,Greenville,1
+268,South Carolina,Runoff,0,Columbia,1.0,Columbia,Charleston,North Charleston,Mount Pleasant,Rock Hill,Greenville,1
+269,South Carolina,Instant-runoff,0,Columbia,1.0,Columbia,Charleston,North Charleston,Mount Pleasant,Rock Hill,Greenville,1
+270,South Carolina,Condorcet,0,Columbia,1.0,Columbia,Charleston,North Charleston,Mount Pleasant,Rock Hill,Greenville,1
+271,South Carolina,Approval,0,Columbia,1.0,Columbia,Charleston,North Charleston,Mount Pleasant,Rock Hill,Greenville,1
+272,South Carolina,Score,0,Columbia,1.0,Columbia,Charleston,North Charleston,Mount Pleasant,Rock Hill,Greenville,1

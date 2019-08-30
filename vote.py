@@ -9,7 +9,7 @@ import seaborn as sns
 from election import elect
 
 # sns.set_style('white')
-sns.set(style="ticks", color_codes=True)
+sns.set(style="white", color_codes=True)
 
 
 NUM_CANDIDATES = 5
@@ -73,6 +73,7 @@ if __name__ == '__main__':
 	results = pd.DataFrame(columns=columns)
 	for idx, (record, state_border) in enumerate(zip(shpf.records(), shpf.shapes())):
 		state_name = record[0]
+		# if state_name != 'Texas':	continue
 		state_cities = cities[cities.State==state_name]
 		if len(state_cities) <= 2:	continue
 		state_cities = state_cities.nlargest(NUM_CANDIDATES, 'Population')
@@ -94,17 +95,30 @@ if __name__ == '__main__':
 			np.expand_dims(voter_array[:,1], 0) - np.expand_dims(candidate_array[:,1], 1)), weights=voter_array[:,2], axis=1)
 		distances /= distances.min()
 
-		# for i in range(len(state_border.parts)):
-		# 	part_start, part_end = state_border.parts[i], (state_border.parts[i+1] if i+1 < len(state_border.parts) else len(state_border.points))
-		# 	border_array = np.array(state_border.points[part_start:part_end])
-		# 	border_array[:,1] = mercator_forward(border_array[:,1])
-		# 	plt.plot(border_array[:,0], border_array[:,1], 'k-', linewidth=1, zorder=0)
-		# plt.scatter(voter_array[:,0], voter_array[:,1], s=voter_array[:,2]/voter_array[:,2].max()*10, c='b', marker='.', zorder=-1)
-		# plt.scatter(candidate_array[:,0], candidate_array[:,1], s=50, c='w', marker='o', zorder=1)
-		# plt.scatter(candidate_array[:,0], candidate_array[:,1], s=50, c='k', marker='.', zorder=2)
-		# # plt.gca().set_yscale('function', functions=(mercator_forward, mercator_inverse)) # not supported with custom axes. Cry.
-		# plt.axis('equal')
-		# plt.show()
+		for i in range(len(state_border.parts)):
+			part_start, part_end = state_border.parts[i], (state_border.parts[i+1] if i+1 < len(state_border.parts) else len(state_border.points))
+			border_array = np.array(state_border.points[part_start:part_end])
+			border_array[:,1] = mercator_forward(border_array[:,1])
+			plt.plot(border_array[:,0], border_array[:,1], 'k-', linewidth=1, zorder=0)
+		# plt.plot([voter_array[:,0].min(), voter_array[:,0].max()], [32.5, 32.5], 'k-', linewidth=1, zorder=0)
+		plt.scatter(voter_array[:,0], voter_array[:,1], s=voter_array[:,2]/voter_array[:,2].max()*20, c='b', marker='.', zorder=-1)
+		plt.scatter(candidate_array[:,0], candidate_array[:,1], s=50, c='w', marker='o', zorder=1)
+		plt.scatter(candidate_array[:,0], candidate_array[:,1], s=50, c='k', marker='.', zorder=2)
+		for city in state_cities.itertuples():
+			other_cities = state_cities[state_cities.City!=city.City]
+			nearest_city = other_cities.iloc[np.hypot(
+				other_cities.x - city.x, other_cities.y - city.y).idxmin()]
+			if nearest_city.x > city.x:
+				alignment = 'right'
+			else:
+				alignment = 'left'
+			valignment = 'top' if city.City != 'Houston' else 'bottom'
+			plt.text(city.x, mercator_forward(city.y), ' '+city.City+' ', horizontalalignment=alignment, verticalalignment=valignment, family="Times New Roman", size=10, weight='normal')
+		# plt.gca().set_yscale('function', functions=(mercator_forward, mercator_inverse)) # not supported with custom axes. Cry.
+		plt.xticks([])
+		plt.yticks([])
+		plt.axis('equal')
+		plt.show()
 
 		for system in ELECTORAL_SYSTEMS:
 			winner_idx = elect(candidates=candidate_array, voters=voter_array, system=system.lower(), verbose=False)
@@ -122,9 +136,9 @@ if __name__ == '__main__':
 	for system in ELECTORAL_SYSTEMS:
 		print("{} scores {} on average".format(system, results[results.system==system].winner_distance.mean()))
 
-	sns.violinplot(x='system', y='winner_distance', inner=None, data=results)
-	plt.xlabel("Electoral system")
-	plt.ylabel("Mean distance to capital (normalised)")
-	plt.show()
+	# sns.violinplot(x='system', y='winner_distance', inner=None, data=results)
+	# plt.xlabel("Electoral system")
+	# plt.ylabel("Mean distance to capital (normalised)")
+	# plt.show()
 
 	results.to_csv('results.csv')

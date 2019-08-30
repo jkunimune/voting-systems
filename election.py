@@ -35,10 +35,12 @@ def plurality(candidates, voters, verbose):
 
 
 def primary(candidates, voters, verbose):
-	covariance = np.cov(voters[:,0:2].transpose(), fweights=voters[:,2])
-	w, v = np.linalg.eig(covariance) # Give me that eigenvalue!
-	party_axis = v[:,np.argmax(w)]
-	party_boundary = np.average(np.sum(party_axis*voters[:,0:2], axis=1), weights=voters[:,2])
+	# covariance = np.cov(voters[:,0:2].transpose(), fweights=voters[:,2])
+	# w, v = np.linalg.eig(covariance) # Give me that eigenvalue!
+	# party_axis = v[:,np.argmax(w)]
+	# party_boundary = np.average(np.sum(party_axis*voters[:,0:2], axis=1), weights=voters[:,2])
+	party_axis = [0, 1]
+	party_boundary = 32.5
 
 	voter_aff = np.sum(party_axis*voters[:,0:2], axis=1) >= party_boundary
 	candidate_aff = np.sum(party_axis*candidates[:,0:2], axis=1) >= party_boundary
@@ -59,6 +61,7 @@ def primary(candidates, voters, verbose):
 	final_tallies = np.sum(voters[:,2]*(votes==np.expand_dims(np.arange(candidates.shape[0]), 1)), axis=1)
 
 	if verbose:
+		print("Dividing line: {1:.3f} y + {0:.3f} x = {2:.3f}".format(*party_axis, party_boundary))
 		for i, party in [(0, "S"), (1, "N")]:
 			print("Primary {} tallies: {}".format(party, primary_tallies[i]/primary_tallies[i].sum()))
 		print("Final tallies:   {}".format(final_tallies/final_tallies.sum()))
@@ -119,12 +122,13 @@ def condorcet(candidates, voters, verbose):
 		np.expand_dims(voters[:,1], 0) - np.expand_dims(candidates[:,1], 1))
 	votes = np.array(
 		[
-			[np.sum(voters[:,2]*(value[i,:]>value[j,:])) - np.sum(voters[:,2]*(value[i,:]<value[j,:])) for j in range(candidates.shape[0])]
+			[(np.sum(voters[:,2]*(value[i,:]>value[j,:])) - np.sum(voters[:,2]*(value[i,:]<value[j,:]))) for j in range(candidates.shape[0])]
 		for i in range(candidates.shape[0])
 	]) # votes[i,j] is 1 if i would beat j
+	votes = votes/np.sum(voters[:,2])*100
 
 	if verbose:
-		print("Preferences:\n{}".format(votes/voters.shape[0]))
+		print("Preferences:\n{}".format(votes))
 		if not np.any(np.all(votes>=0, axis=1)):
 			print("There is no Condorcet winner.")
 	return np.argmax(np.sum(votes>=0, axis=1))
